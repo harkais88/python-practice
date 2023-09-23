@@ -1,4 +1,5 @@
-# Randomly generates a directory consisting of n files from d dirs with n questions 
+#!/usr/bin/python3
+#Randomly generates a directory consisting of n files from d dirs with n questions 
 # each picked from each directory
 
 import os,random
@@ -11,23 +12,25 @@ class testGen:
     """ Class for generating tests based on the practice files\n
     Use txtOps() for txt file format or nbOps() for ipynb format """
 
+    curr_dir = os.path.dirname(os.path.realpath(__file__))
     test_dir = "Test Attempts"
 
     def getTopicDirs(self):
         """ Get the list of all the different topic directories"""
 
-        return [dir for dir in os.listdir(".") if (os.path.isdir(dir) and dir != self.test_dir)]
+        return [dir for dir in os.listdir(self.curr_dir) if (os.path.isdir(dir) and dir != self.test_dir and dir[0] != ".")]
 
     def checkTestDir(self):
         """  The test files go into this directory, if it does not exist, we create it"""
 
-        if not os.path.exists(f"./{self.test_dir}"):
-            os.mkdir(f"./{self.test_dir}")
+        if not os.path.exists(f"{self.curr_dir}/{self.test_dir}"):
+            os.mkdir(f"{self.curr_dir}/{self.test_dir}")
 
     def getFilesPathsList(self):
         """  Get the list of of lists of every single file in each of the topic directories"""
 
         file_paths_list = []
+
         # Iterating through the paths of each topic directory found
         for path in self.getTopicDirs():
             # Get the absolute path of the topic directory
@@ -51,14 +54,17 @@ class testGen:
         self.checkTestDir()
 
         # Setting Test File Number, as there would be multiple test files 
-        file_no = len([file for file in os.listdir(f"./{self.test_dir}") if file.endswith(".txt")]) + 1
+        file_no = len([file for file in os.listdir(f"{self.curr_dir}/{self.test_dir}") if file.endswith(".txt")]) + 1
 
         # Setting Test File Path
-        self.test_file_path = f".\\{self.test_dir}\\Python_Test_{file_no}.txt"
+        self.test_file_path = os.path.abspath(os.path.normpath(f"{self.curr_dir}/{self.test_dir}/Python_Test_{file_no}.txt"))
 
         # Creating our test file
         test_file = open(self.test_file_path,"w")
         
+        # Heading
+        test_file.write(text2art("Python Test".center(85), font = "ogre"))
+
         # Iterating through each list of relative path names of the different topic dirs inside
         # the file_paths_list list 
         for file_paths in self.getFilesPathsList():
@@ -67,7 +73,7 @@ class testGen:
 
             # Writing the topic name as the sub-Header, to distinguish between the different topics...
             # Maybe this won't be required, and in the future, should look into jumbling the order up too
-            test_file.write(text2art(file_paths[0][:file_paths[0].find("\\")], font = "ogre") + "\n")
+            test_file.write(text2art(file_paths[0][:file_paths[0].find(os.path.basename(file_paths[0]))-1], font = "ogre") + "\n")
 
             # Writing our 10 questions from the current topic
             while len(file_log) != 10:
@@ -188,10 +194,10 @@ class testGen:
                 file_log.append(file_path)
         
         # Setting Test File Number, as there would be multiple test files 
-        file_no = len([file for file in os.listdir(f"./{self.test_dir}") if file.endswith(".ipynb")]) + 1
+        file_no = len([file for file in os.listdir(f"{self.curr_dir}/{self.test_dir}") if file.endswith(".ipynb")]) + 1
 
         # Setting out Test File Path
-        self.test_file_path = f".\\{self.test_dir}\\Python_Test_{file_no}.ipynb"
+        self.test_file_path = os.path.abspath(os.path.normpath(f"{self.curr_dir}/{self.test_dir}/Python_Test_{file_no}.ipynb"))
 
         # Creating our test file
         test_file = open(self.test_file_path,"w")
@@ -243,7 +249,7 @@ class GUI:
 
         testObj = testGen()
         testObj.txtOps()
-        test_file_name = testObj.test_file_path[testObj.test_file_path.find("Python"):]
+        test_file_name = testObj.test_file_path[testObj.test_file_path.find("Python_Test"):]
         self.output.configure(text = f"{test_file_name} created! Click on me to check me out",
                               fg = "blue", font = ("Helvetica",12))
         self.output.bind("<Button-1>", lambda e: webbrowser.open_new(testObj.test_file_path))
@@ -253,7 +259,7 @@ class GUI:
 
         testObj = testGen()
         testObj.nbOps()
-        test_file_name = testObj.test_file_path[testObj.test_file_path.find("Python"):]
+        test_file_name = testObj.test_file_path[testObj.test_file_path.find("Python_Test"):]
         self.output.configure(text = f"{test_file_name} created! Click on me to check me out",
                               fg = "blue", font = ("Helvetica",12))
         self.output.bind("<Button-1>", lambda e: webbrowser.open_new(testObj.test_file_path))
