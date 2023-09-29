@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to convert the distance (in feet) to inches, yards, and miles."""
 
 if __name__ == "__main__":

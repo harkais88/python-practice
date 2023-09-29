@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to count the number 4 in a given list."""
 
 if __name__ == "__main__":

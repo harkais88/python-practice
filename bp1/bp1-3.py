@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to display the current date and time.
 Sample Output :
 Current date and time :

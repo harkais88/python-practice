@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to find out what version of Python you are using."""
 
 #Using the sys module

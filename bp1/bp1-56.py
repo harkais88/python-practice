@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to get the height and width of the console window."""
 
 # #Another code that works only in Linux... maybe I should switch OS again

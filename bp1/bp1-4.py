@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program that calculates the area of a circle based on the radius entered by the user.
 Sample Output :
 r = 1.1

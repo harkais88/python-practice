@@ -104,6 +104,10 @@ class testGen:
 
                 # The questions are written in the first multiline comment in each file
                 for line in lines:
+                    # Ignoring any other comment before first multiline comment, mainly useful in a Unix environment
+                    if "#" in line or line == "\n":
+                        continue
+
                     # Removing all instances of the comment quotations
                     w_line = line.replace("\"\"\"","")
 
@@ -150,7 +154,7 @@ class testGen:
             # Writing the topic name as a sub-header
 
             nb["cells"].append(nbf.v4.new_markdown_cell("<h2><b>" + 
-                                                        file_paths[0][:file_paths[0].find("\\")] 
+                                                        file_paths[0][:file_paths[0].find(os.path.basename(file_paths[0]))-1]
                                                         + "</h2></b>"
                                                         + "\n"))
 
@@ -179,7 +183,10 @@ class testGen:
                 # Should contain the entire solution
                 s_line = ""
 
+                # Extracting the question part from the file
                 index = 0
+                while "#" in lines[index] or lines[index] == "\n":
+                    index += 1
                 line = lines[index]
                 while True:
                     f_line = line.replace("\"\"\"","").replace("\n","<br>").replace("\t","&#160;"*4)
@@ -189,6 +196,7 @@ class testGen:
                     index += 1
                     line = lines[index]
 
+                # Extracting the solution part from the file
                 for i in range(index+1,len(lines)):
                     line = lines[i]
                     f_line = line.replace("\"\"\"","").replace("\n","<br>")
@@ -229,12 +237,12 @@ class testGen:
         test_file.close()
 
 class GUI:
+    """ Presents a GUI for the user to decide whether they want\n
+        to make the test file a txt file or an ipynb file"""
+    
     testObj = testGen()
 
     def __init__(self):
-        """ Presents a GUI for the user to decide whether they want\n
-        to make the test file a txt file or an ipynb file"""
-
         # Get Question list for solution finding and autocomplete feature
         self.getQuestions()
 
@@ -244,6 +252,8 @@ class GUI:
         self.gui.mainloop()
 
     def getQuestions(self):
+        """ Get all the questions in all the topic dirs in a single list"""
+
         self.questions_list = []
         r_line = ""
 
@@ -254,8 +264,11 @@ class GUI:
 
                     # The questions are written in the first multiline comment in each file
                     for line in lines:
+                        if "#" in line or line == "\n":
+                            continue
+
                         # Removing all instances of the comment quotations
-                        w_line = line.replace("\"\"\"","")
+                        w_line = line.replace("\"\"\"","").replace("\n"," ")
 
                         # Writing our line to the test file
                         r_line += w_line
@@ -338,6 +351,8 @@ class GUI:
         self.output.bind("<Button-1>", lambda e: webbrowser.open_new(self.testObj.test_file_path))
 
     def showSol(self):
+        """ For finding the solution file path and presenting it as a link in the GUI"""
+
         search_bar_output = self.search_bar.get()
         if search_bar_output[0].isdigit():
             search_bar_output = search_bar_output[search_bar_output.find(

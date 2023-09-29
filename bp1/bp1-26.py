@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to create a histogram pattern from a given list of integers.
 Sample Input: 2,3,6,5
 Sample Output:

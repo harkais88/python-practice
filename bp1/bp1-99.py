@@ -1,9 +1,11 @@
-"""Write a Python program to clear the screen or terminal."""
+#!/usr/bin/python3
 
-import os
-from time import sleep
+"""Write a Python program to get system time.
+
+Note : The system time is important for debugging, network information, 
+random number seeds, or something as simple as program performance."""
+
+import time
 
 if __name__ == "__main__":
-    print("Going to clear screen in 3 seconds: ")
-    sleep(3)
-    os.system('cls')
+    print("\n System time: ",time.ctime())

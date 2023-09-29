@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to find local IP addresses using Python's stdlib."""
 
 #... If you have no idea on how this worked, me neither :P. Better learn about sockets man

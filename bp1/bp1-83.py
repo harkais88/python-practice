@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to test whether all numbers in a list are greater than a certain number."""
 
 from random import randint

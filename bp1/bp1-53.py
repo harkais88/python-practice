@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to access environment variables."""
 
 import os

@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program that converts seconds into days, hours, minutes, and seconds."""
 
 if __name__ == "__main__":

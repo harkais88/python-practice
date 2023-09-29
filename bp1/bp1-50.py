@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to print without a newline or space."""
 
 if __name__ == "__main__":

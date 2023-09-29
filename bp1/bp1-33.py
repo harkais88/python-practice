@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to sum three given integers. However, if two values are equal, the sum will be zero."""
 
 if __name__ == "__main__":

@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to convert all units of time into seconds."""
 
 from math import pow

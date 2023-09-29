@@ -1,8 +1,11 @@
-"""Write a Python program to get the name of the host on which the routine is running."""
+#!/usr/bin/python3
 
-import socket
+"""Write a Python program to clear the screen or terminal."""
+
+import os
+from time import sleep
 
 if __name__ == "__main__":
-    print(socket.gethostname())
-
-#.... Really need to study about socket programming, might come in handy later in life
+    print("Going to clear screen in 3 seconds: ")
+    sleep(3)
+    os.system('cls')

@@ -1,6 +1,9 @@
-"""Write a Python program to extract the filename from a given path."""
+#!/usr/bin/python3
 
-import os
+"""Write a Python program to get system command output."""
+
+import subprocess
 
 if __name__ == "__main__":
-    print(os.path.basename(__file__))
+    returned_text = subprocess.check_output("dir",shell=True,universal_newlines=True)
+    print(returned_text)    

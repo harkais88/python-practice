@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to calculate the midpoints of a line."""
 
 if __name__ == "__main__":

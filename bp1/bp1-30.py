@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program that will accept the base and height of a triangle and compute its area."""
 
 if __name__ == "__main__":

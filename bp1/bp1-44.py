@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to locate Python site packages."""
 
 #Shows where all the inbuilt Python binary modules are stored

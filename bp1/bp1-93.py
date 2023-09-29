@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to get the Identity, Type, and Value of an object."""
 
 if __name__ == "__main__":

@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to calculate sum of digits of a number."""
 
 if __name__ == "__main__":

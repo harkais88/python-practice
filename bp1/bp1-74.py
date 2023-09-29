@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to hash a word."""
 
 if __name__ == "__main__":

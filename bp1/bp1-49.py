@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to list all files in a directory."""
 
 import os

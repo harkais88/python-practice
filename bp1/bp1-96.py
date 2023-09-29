@@ -1,9 +1,11 @@
-"""Write a Python program to print the current call stack."""
+#!/usr/bin/python3
 
-import traceback
-
-def main():
-    traceback.print_stack()
+"""Write a Python program to check whether a string is numeric."""
 
 if __name__ == "__main__":
-    main()
+    string = input("\n Enter a string: ")
+
+    if string.isnumeric():
+        print("\n It is a numeric string")
+    else:
+        print("\n It is not a numeric string")

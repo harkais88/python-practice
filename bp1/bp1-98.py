@@ -1,9 +1,9 @@
-"""Write a Python program to get system time.
+#!/usr/bin/python3
 
-Note : The system time is important for debugging, network information, 
-random number seeds, or something as simple as program performance."""
-
-import time
+"""Write a Python program to list the special variables used in the language."""
 
 if __name__ == "__main__":
-    print("\n System time: ",time.ctime())
+    s_var_names = sorted((set(globals().keys()) | set(__builtins__.__dict__.keys())) - set('_ names i'.split()))
+    print()
+    print( '\n'.join(' '.join(s_var_names[i:i+8]) for i in range(0, len(s_var_names), 8)) )
+    print()

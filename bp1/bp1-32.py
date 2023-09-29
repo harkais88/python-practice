@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to find the least common multiple (LCM) of two positive integers."""
 
 # #One way to do it

@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to check whether a file path is a file or a directory."""
 
 import os

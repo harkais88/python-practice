@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to print to STDERR."""
 #Kind of a weird one to be honest, needs to be better explained
 

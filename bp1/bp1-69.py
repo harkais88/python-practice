@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to sort three integers without explicitly using conditional statements and loops."""
 
 if __name__ == "__main__":

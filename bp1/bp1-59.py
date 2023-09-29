@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to convert height (in feet and inches) to centimeters."""
 
 if __name__ == "__main__":

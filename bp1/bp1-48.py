@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to parse a string to float or integer."""
 
 if __name__ == "__main__":

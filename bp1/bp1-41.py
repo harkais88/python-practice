@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to check whether a file exists."""
 
 # One Way to do it

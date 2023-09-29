@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to get the current username."""
 
 import os

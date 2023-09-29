@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Write a Python program to get the ASCII value of a character."""
 
 if __name__ == "__main__":
