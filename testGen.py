@@ -14,7 +14,7 @@ class testGen:
         self.curr_dir = os.path.dirname(os.path.realpath(__file__))
         self.test_dir = "Test Attempts"
         self.file_paths_list = self.getFilesPathsList() 
-        self.topic_names_dict = {"bp1": "Basics Part 1", "bp2": "Basics Part 2"}
+        self.topic_names_dict = {"bp1": "Basics Part 1", "bp2": "Basics Part 2", "npb": "Numpy Basics"}
 
     def getTopicDirs(self):
         """ Get the list of all the different topic directories"""

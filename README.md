@@ -82,6 +82,13 @@ All of these questions are taken from the W3Resource Website
 
 <h2>Change Log</h2>
 
+<h4>v1.2 Key Highlights:</h4>
+<ul>
+    <li>Added more files to bp2</li>
+    <li>Added topic dir npb (Numpy basics)</li>
+    <li>Modified testGen to accomodate for npb</li>
+</ul>
+
 <h4>v1.1 Key Highlights:</h4>
 <ul>
     <li>Fixed some code in the testGen script</li>
